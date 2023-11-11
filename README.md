@@ -16,7 +16,6 @@ First, you need to install node !
 
 ```
 npm create vite@latest
-
 ```
 
 You can write anything for the name of your repository. The only thing you need to do is to choose Vue for the framework and then Javascript for the variant. Now you should be good to start your project, just do the last command show after creating the repository and you should be able to open in a certain localhost the project.
