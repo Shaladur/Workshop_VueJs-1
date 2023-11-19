@@ -21,4 +21,26 @@ npm create vite@latest
 You can write anything for the name of your repository. The only thing you need to do is to choose Vue for the framework and then Javascript for the variant. Now you should be good to start your project, just do the last command show after creating the repository and you should be able to open in a certain localhost the project.
 
 <br>
-<h2>Step 1 : TopBar</h2>
+<h2>Step 1 : Create a new page and interac with it</h2>
+How about beginning with a simple task, make a new page and make a button who allow you to go to this new page ?
+
+Sound easy for you ?
+Well, let's see that. But first, you need to download more package
+
+```
+npm vue-router
+```
+This package will allow to go to different page easily.
+
+(Bonus)
+For those who like to do more, how about making a router-link. You don't know how to make a router-link ? Well, it's time to learn it.
+That package, I make you download should be very helpful in order to make that router-link, don't you think so ?
+
+<br>
+<h2>Step 2 : </h2>
+
+<br>
+<h2>Step 3 : TopBar</h2>
+
+<br>
+<h2>Step 4 : Cards</h2>
