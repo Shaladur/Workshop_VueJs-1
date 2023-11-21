@@ -42,7 +42,8 @@ I hope you have fun create this button (and maybe that router-link) but let's cr
 (You guess it, more page to do but be free to make has many possible)
 
 <br>
-<h2>Step 3 : </h2>
+<h2>Step 3 : Share variable</h2>
+Now, we going to see how we can share information with variable. For that we going to see how to do that.
 
 <br>
 <h2>Step 4 : Cards</h2>
