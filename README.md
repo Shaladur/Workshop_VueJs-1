@@ -1,4 +1,4 @@
-# Workshop ViteJs
+# Workshop VueJs
 
 <h1>Introduction</h1>
 Hi !!<br>
