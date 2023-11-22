@@ -2,7 +2,7 @@
 
 <h1>Introduction</h1>
 Hi !!<br>
-Welcome to our workshop. Today we are gonna learn the basic of ViteJs.<br>
+Welcome to our workshop. Today we are gonna learn the basic of VueJs.<br>
 In order to not get lost during the Workshop, please follow the steps below.
 
 <br>
