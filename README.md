@@ -37,9 +37,9 @@ For those who like to do more, how about making a router-link. You don't know ho
 That package, I make you download should be very helpful in order to make that router-link, don't you think so ?
 
 <br>
-<h2>Step 2 : TopBar</h2>
-I hope you have fun create this button (and maybe that router-link) but let's create something better like a TopBar with some button to go in different page.
-(You guess it, more page to do but be free to make has many possible)
+<h2>Step 2 : NavBar</h2>
+I hope you have fun create this button (and maybe that router-link) but let's create something better like a NavBar and add the button you create on the previous step. That would visually better, don't you think so ?
+(You guess it, more page to do but be free to make has many you want !!!)
 
 
 <br>
