@@ -1,4 +1,4 @@
-# Workshop VueJs
+# Workshop VueJs-1
 
 <h1>Introduction</h1>
 Hi !!<br>
@@ -38,14 +38,26 @@ That package, I make you download should be very helpful in order to make that r
 
 <br>
 <h2>Step 2 : NavBar</h2>
-I hope you have fun create this button (and maybe that router-link) but let's create something better like a NavBar and add the button you create on the previous step. That would visually better, don't you think so ?
-(You guess it, more page to do but be free to make has many you want !!!)
+I hope you have fun create this button (and maybe that router-link) but let's create something better like a NavBar and add the button you create on the previous step. (You guess it, more page to do but be free to make has many you want !!!)
+I think that would be better to watch, don't you think so ? Well, it's not like you have something else to do so have fun and be creative.
 
 
 <br>
 <h2>Step 3 : Share variable</h2>
-Now, we going to see how we can share information with variable. For that we going to see how to do that.
+Now, we going to see how we can share information with variable. But first, we going to download more lib (that should be the last one, maybe...)
 
+```
+npm vuex
+```
 
 <br>
 <h2>Step 4 : Cards</h2>
+
+On this step, you going to create a reusable Card component capable of displaying diverse information, such as images, titles, and descriptions. Utilize this component to exhibit a list of cards showcasing different content on a single page (We are out of image so just write some text component inside, if you know how to that first, well you can add anything after).
+
+
+Bonus (Optional) :
+
+Implement interactivity within the cards, allowing users to interact with each card individually
+
+<h2>Step 5 : Bonus</h2>
