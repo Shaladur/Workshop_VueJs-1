@@ -12,6 +12,7 @@ During this workshop, if you have difficulty to do any step, you can ask for hel
 
 <br>
 <h2>Step 0 : Installation</h2>
+
 First, you need to install node !
 
 ```
@@ -22,6 +23,7 @@ You can write anything for the name of your repository. The only thing you need 
 
 <br>
 <h2>Step 1 : Create a new page and interact with it</h2>
+
 How about beginning with a simple task, make a new page and make a button who allow you to go to this new page ?
 
 Sound easy for you ?
@@ -38,17 +40,20 @@ That package, I make you download should be very helpful in order to make that r
 
 <br>
 <h2>Step 2 : NavBar</h2>
+
 I hope you have fun create this button (and maybe that router-link) but let's create something better like a NavBar and add the button you create on the previous step. (You guess it, more page to do but be free to make has many you want !!!)
 I think that would be better to watch, don't you think so ? Well, it's not like you have something else to do so have fun and be creative.
 
-
 <br>
 <h2>Step 3 : Share variable</h2>
-Now, we going to see how we can share information with variable. But first, we going to download more lib (that should be the last one, maybe...)
+Now, we going to see how we can share information with variable. But first, in order to create share variable (or if you prefer the term global variable) we going to download more lib (that should be the last one, maybe...).
 
 ```
 npm vuex
 ```
+
+With this, you should be able to create share variable. Also, here another link in order to understand what we want to do : https://vuex.vuejs.org/guide/state.html
+
 
 <br>
 <h2>Step 4 : Cards</h2>
@@ -61,3 +66,5 @@ Bonus (Optional) :
 Implement interactivity within the cards, allowing users to interact with each card individually
 
 <h2>Step 5 : Bonus</h2>
+
+Well, you reach the end of this workshop, we don't have more step or exercice you can do (for now) but that doesn't mean this is the end. You know the base of VueJs now 
