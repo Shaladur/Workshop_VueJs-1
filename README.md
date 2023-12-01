@@ -369,4 +369,4 @@ Thank you for participating in our Vue.js and Vuetify Workshop!
 ## Contacts Us
 **Malek Gatoufi**: malek.gatoufi@epitech.eu
 
-**Bastien Rodriguez**: bastien.rodriguez@epitech.eu
+**Bastien Rodriguez**: bastien.rodrigues@epitech.eu
