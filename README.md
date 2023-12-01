@@ -1,70 +1,372 @@
-# Workshop VueJs-1
+# Vue.js Workshop Part  1
 
-<h1>Introduction</h1>
-Hi !!<br>
-Welcome to our workshop. Today we are gonna learn the basic of VueJs.<br>
-In order to not get lost during the Workshop, please follow the steps below.
+## Introduction
 
-<br>
-<h2>Ressource</h2>
+Welcome to the Vue.js Workshop Part 1! This session is designed to introduce you to the basics of Vue.js. By the end of this workshop, you'll have a solid foundation in Vue.js and the skills to build basic Vue applications.
 
-During this workshop, if you have difficulty to do any step, you can ask for help or you can also check the documentary of Vue vite. Here the link: https://vitejs.dev/
+### Workshop Goals
+- Understand Vue.js fundamentals
+- Learn to create and navigate between pages
+- Implement a NavBar using Vue.js
+- Manage global state with Vuex
+- Create reusable components, like a Card component
 
-<br>
-<h2>Step 0 : Installation</h2>
+### Summary
+- **Introduction**: 5 minutes
+- **Step 0 - Installation**: 15 minutes
+- **Step 1 - New Page & Navigation**: 30 minutes
+- **Step 2 - NavBar**: 30 minutes
+- **Step 3 - Global State with Vuex**: 30 minutes
+- **Step 4 - Card Component**: 30 minutes
+- **Q&A and Wrap-Up**: 10 minutes
 
-First, you need to install node !
+## Resources
+- [Vue Vite Documentation](https://vitejs.dev/)
+- [Vuex State Management](https://vuex.vuejs.org/guide/state.html)
 
+## Step 0: Installation and Setup
+
+### Prerequisites
+Ensure you have Node.js installed on your system. You can download it from [Node.js Official Website](https://nodejs.org/).
+
+### Creating a New Vue Project
+1. **Install Vite**: Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects. To create a new project, run:
+   ```bash
+   npm create vite@latest my-vue-app --template vue
+   ````
+    Replace my-vue-app with the name of your project.
+2. **Navigate to your project folder**:
+    ```bash
+    cd my-vue-app
+    ```
+3. **Install Dependencies**: Install Vue dependencies in your project.
+    ```bash
+    npm install
+    ```
+### Adding Vuetify
+1. **Install Vuetify**: Add Vuetify to your project.
+    ```bash
+    npm install vuetify
+    ```
+
+2. **Configure Vuetify**: Import and use Vuetify in your `main.js` file.
+    ```javascript
+    import { createApp } from 'vue'
+    import App from './App.vue'
+    import vuetify from './plugins/vuetify' /* Ensure this path is correct */
+
+    const app = createApp(App)
+
+    app.use(vuetify)
+
+    app.mount('#app')
+    ```
+
+3. **Create a Vuetify Plugin File**: In the plugins directory, create a `vuetify.js` file. Here's a basic setup:
+    ```javascript
+    // plugins/vuetify.js
+    import 'vuetify/styles'
+    import { createVuetify } from 'vuetify'
+    export default createVuetify()
+    ```
+
+4. **Include Vuetify CSS**: Make sure to include Vuetify CSS in your project. You can add it to your `index.html` or main entry file.
+
+### Running the Project
+Once everything is set up, you can start your Vue.js project:
+
+```bash
+npm run dev
 ```
-npm create vite@latest
+
+This command will start the local development server. You can access your application by going to http://localhost:5173 in your web browser.
+
+
+## Step 1: Creating a New Page with Vuetify
+
+In this step, you will learn how to create a new page in your Vue.js application and enhance it with Vuetify components, including a navigation button.
+
+### Installing Vue Router
+
+First, ensure that Vue Router is installed to manage page navigation:
+
+```bash
+npm install vue-router
 ```
 
-You can write anything for the name of your repository. The only thing you need to do is to choose Vue for the framework and then Javascript for the variant. Now you should be good to start your project, just do the last command show after creating the repository and you should be able to open in a certain localhost the project.
+### Adding a New Page
 
-<br>
-<h2>Step 1 : Create a new page and interact with it</h2>
+1. **Create a New Vue Component**: This will be your new page. In your project's `src/views` directory, create a new file, for example, `MyNewPage.vue`.
 
-How about beginning with a simple task, make a new page and make a button who allow you to go to this new page ?
+2. **Structure Your Page with Vuetify**: Use Vuetify components to layout your page. A simple structure may include a container, a text component, and other UI elements.
 
-Sound easy for you ?
-Well, let's see that. But first, you need to download more package
+   ```vue
+   <template>
+     <v-container>
+       <v-row justify="center">
+         <v-col cols="12" sm="8" md="6">
+           <h1>Bastien Mon Bébou</h1>
+           <p>Welcome to the new page!</p>
+           <!-- Add more Vuetify components as needed -->
+         </v-col>
+       </v-row>
+     </v-container>
+   </template>
+   ```
 
+### Implementing Navigation
+
+1. **Configure Vue Router**: In your `src/router/index.js`, add a route for your new page.
+
+   ```javascript
+   import MyNewPage from '../views/MyNewPage.vue'
+
+   const routes = [
+     // other routes...
+     { path: '/new-page', name: 'NewPage', component: MyNewPage },
+   ]
+   ```
+
+2. **Add a Navigation Button**: Use a Vuetify button component to navigate to your new page. This button can be placed on your homepage or any other component.
+
+   ```vue
+   <template>
+     <v-btn color="primary" to="/new-page">Go to New Page</v-btn>
+   </template>
+   ```
+
+   The `to` attribute in `v-btn` is used for navigation, similar to `<router-link>` in Vue Router.
+
+### Example: New Page Component
+
+Here's a basic example of a new page component using Vuetify:
+
+```vue
+<template>
+  <v-container>
+    <v-row justify="center">
+      <v-col cols="12" sm="8" md="6">
+        <h1>My New Page</h1>
+        <p>Welcome to the new page!</p>
+        <!-- Add more Vuetify components as needed -->
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+export default {
+  name: 'MyNewPage'
+  // You can add script data, methods, etc. here
+}
+</script>
 ```
-npm vue-router
+
+By following these steps, you can effectively create a new page and incorporate navigation within your Vue.js application using Vuetify.
+
+
+## Step 2: NavBar with Vuetify
+
+In this step, we will create a responsive and stylish navigation bar (NavBar) using Vuetify components.
+
+### Designing the NavBar
+
+1. **Import the Vuetify Components**: In your component where you want to add the NavBar, make sure to import the necessary Vuetify components. For a basic NavBar, we will use `VAppBar`, `VToolbarTitle`, and `VBtn`.
+
+   ```javascript
+   import { VAppBar, VToolbarTitle, VBtn } from 'vuetify/components'
+   ```
+
+2. **Add the Vuetify NavBar Markup**: Use the Vuetify components to structure your NavBar. Here's an example of a basic NavBar layout:
+
+   ```vue
+   <template>
+     <v-app-bar app>
+       <v-toolbar-title>My Vue App</v-toolbar-title>
+       <v-spacer></v-spacer>
+       <v-btn text to="/your-route">Home</v-btn>
+       <!-- Add more buttons as needed -->
+     </v-app-bar>
+   </template>
+   ```
+
+   - `v-app-bar`: The container for your NavBar.
+   - `v-toolbar-title`: To display the title of your application or website.
+   - `v-spacer`: This pushes your navigation items to the right.
+   - `v-btn`: Represents a button in the NavBar. The `to` attribute is used for navigation, similar to `<router-link>`.
+
+3. **Styling the NavBar**: You can style your NavBar using Vuetify's built-in classes or custom CSS. Vuetify offers a wide range of options for colors, spacing, and more.
+
+### Integrating Navigation
+
+1. **Setup Vue Router**: Make sure you have Vue Router set up in your project for navigation.
+
+2. **Linking Pages**: Use the `to` attribute in `v-btn` to navigate to different pages. For example:
+
+   ```vue
+   <v-btn text to="/">Home</v-btn>
+   <v-btn text to="/about">About</v-btn>
+   ```
+
+   These buttons will navigate to the Home and About pages of your application.
+
+3. **Responsive Design**: Vuetify's NavBar is responsive by default. However, you can further customize it for different screen sizes using Vuetify's breakpoint system.
+
+### Example: Complete NavBar Component
+
+Here's an example of a complete NavBar component using Vuetify:
+
+```vue
+<template>
+  <v-app-bar app>
+    <v-toolbar-title>My Vue App</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-btn text to="/">Home</v-btn>
+    <v-btn text to="/about">About</v-btn>
+    <!-- Add more navigation buttons as needed -->
+  </v-app-bar>
+</template>
+
+<script>
+export default {
+  name: 'NavBar',
+  components: {
+    VAppBar,
+    VToolbarTitle,
+    VBtn
+  }
+}
+</script>
 ```
-This package will allow to go to different page easily.
 
-(Bonus)
-For those who like to do more, how about making a router-link. You don't know how to make a router-link ? Well, it's time to learn it.
-That package, I make you download should be very helpful in order to make that router-link, don't you think so ?
+This component creates a functional NavBar with home and about buttons for navigation. You can expand this NavBar by adding more buttons, dropdowns, or other elements as needed.
 
-<br>
-<h2>Step 2 : NavBar</h2>
 
-I hope you have fun create this button (and maybe that router-link) but let's create something better like a NavBar and add the button you create on the previous step. (You guess it, more page to do but be free to make has many you want !!!)
-I think that would be better to watch, don't you think so ? Well, it's not like you have something else to do so have fun and be creative.
+## Step 3: Global State with Vuex
 
-<br>
-<h2>Step 3 : Share variable</h2>
-Now, we going to see how we can share information with variable. But first, in order to create share variable (or if you prefer the term global variable) we going to download more lib (that should be the last one, maybe...).
+Managing global state is a crucial part of larger applications. Vuex is a state management pattern and library for Vue.js applications.
 
-```
-npm vuex
+### Installing Vuex
+
+First, install Vuex in your project:
+
+```bash
+npm install vuex@next
 ```
 
-With this, you should be able to create share variable. Also, here another link in order to understand what we want to do : https://vuex.vuejs.org/guide/state.html
+### Setting Up Vuex
 
+1. **Create a Store**: In your project's `src/store` directory, create a new file, `index.js`.
 
-<br>
-<h2>Step 4 : Cards</h2>
+2. **Configure the Store**: Set up the state, mutations, actions, and getters.
 
-On this step, you going to create a reusable Card component capable of displaying diverse information, such as images, titles, and descriptions. Utilize this component to exhibit a list of cards showcasing different content on a single page (We are out of image so just write some text component inside, if you know how to that first, well you can add anything after).
+   ```javascript
+   import { createStore } from 'vuex'
 
+   export default createStore({
+     state: {
+       // your state properties
+     },
+     mutations: {
+       // your mutations
+     },
+     actions: {
+       // your actions
+     },
+     getters: {
+       // your getters
+     }
+   })
+   ```
 
-Bonus (Optional) :
+3. **Use the Store in Your Application**: Import and use the store in your `main.js`.
 
-Implement interactivity within the cards, allowing users to interact with each card individually
+   ```javascript
+   import { createApp } from 'vue'
+   import App from './App.vue'
+   import store from './store'
 
-<h2>Step 5 : Bonus</h2>
+   createApp(App).use(store).mount('#app')
+   ```
 
-Well, you reach the end of this workshop, we don't have more step or exercice you can do (for now) but that doesn't mean this is the end. You know the base of VueJs now 
+Refer to the [Vuex Documentation](https://vuex.vuejs.org/) for more detailed instructions on creating and managing a shared state.
+
+## Step 4: Card Component with Vuetify
+
+Developing reusable components like a Card component is simplified with Vuetify.
+
+### Creating a Vuetify Card Component
+
+1. **Define the Card Component**: In your `components` directory, create a new file, `MyCard.vue`.
+
+2. **Add Vuetify Card Markup**: Utilize Vuetify's `v-card` component to structure your card.
+
+   ```vue
+   <template>
+     <v-card>
+       <v-card-title>{{ title }}</v-card-title>
+       <v-card-text>{{ description }}</v-card-text>
+       <!-- Add more Vuetify components as needed -->
+     </v-card>
+   </template>
+
+   <script>
+   export default {
+     props: {
+       title: String,
+       description: String
+     }
+   }
+   </script>
+   ```
+
+3. **Use the Card Component**: Import and use your card component in other parts of your application, passing the necessary props.
+
+### Example: Displaying a List of Cards
+
+To display a list of cards:
+
+```vue
+<template>
+  <div>
+    <my-card
+      v-for="(item, index) in items"
+      :key="index"
+      :title="item.title"
+      :description="item.description"
+    />
+  </div>
+</template>
+
+<script>
+import MyCard from '@/components/MyCard.vue'
+
+export default {
+  components: {
+    MyCard
+  },
+  data() {
+    return {
+      items: [
+        // Your items here
+      ]
+    }
+  }
+}
+</script>
+```
+
+## Bonus Step
+
+Feel free to explore more advanced Vue.js and Vuetify features and expand on the exercises provided.
+
+## Feedback
+
+Your feedback is invaluable in improving future workshops. Please share your thoughts and suggestions about this workshop.
+
+Thank you for participating in our Vue.js and Vuetify Workshop!
+
+## Contacts Us
+**Malek Gatoufi**: malek.gatoufi@epitech.eu
+
+**Bastien Rodriguez**: bastien.rodriguez@epitech.eu
